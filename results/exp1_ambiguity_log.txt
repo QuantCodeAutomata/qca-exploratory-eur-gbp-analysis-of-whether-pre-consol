@@ -1,0 +1,10 @@
+date_range_ambiguity: Paper says 'one year' but Oct 2017–Dec 2018 is 15 months. We use the full 15-month span as stated in the paper's date range.
+width_rule: Flowchart says 'within 15 pips'; method section says 8-15 pips. Primary replication uses 8-15 pips.
+adx_formula: Paper prints nonstandard ADX formulas. We use Wilder-style 14-period ADX via `ta` library as best paper-consistent implementation.
+adx_window_rounding: Paper gives no rounding rule for 10% of consolidation length. We use floor() as the deterministic integer conversion rule.
+entry_price: Paper does not define exact entry price semantics. We use the close of the breakout bar as the entry price.
+intrabar_tiebreak: If both stop and target are hit in the same bar, stop wins (conservative rule). Paper gives no guidance.
+adx_bins: Paper does not state exact ADX bin edges for heatmap. We use [0, 15, 20, 25, 30, 35, 100] with labels ['0-15','15-20','20-25','25-30','30-35','35+'].
+width_bins: Width bins: [8, 10, 12, 15] pips, labels ['8-10','10-12','12-15'], reflecting the 8-15 pip range.
+data_source: No vendor, quote convention, or bid/ask/mid specification given in paper. We use Massive API with default quote type. This is an unresolved assumption.
+missing_bars: Weekend gaps and missing minute bars are NOT filled. Their presence is logged.
